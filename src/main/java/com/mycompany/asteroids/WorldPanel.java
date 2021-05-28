@@ -1,6 +1,7 @@
 package com.mycompany.asteroids;
 
 import com.mycompany.asteroids.entity.Entity;
+import com.mycompany.asteroids.entity.Amigas;
 import com.mycompany.asteroids.util.Vector2;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -173,5 +174,13 @@ public class WorldPanel extends JPanel {
 		}
 		entity.draw(g2d, game);
 	}
+        private void drawAmigas(Graphics2D g2d, Amigas amigas, double x, double y) {
+            g2d.translate(x, y);
+		double rotation = amigas.getRotation();
+		if(rotation != 0.0f) {
+			g2d.rotate(amigas.getRotation());
+		}
+		amigas.draw(g2d, game);
+        }
 
 }

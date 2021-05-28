@@ -15,7 +15,7 @@ import java.util.Random;
  *
  * @author juanp
  */
-public class PowerUp extends Entity{
+public class PowerUp extends Amigas{
     /**
      * @param args the command line arguments
      */
@@ -125,7 +125,9 @@ public class PowerUp extends Entity{
 
 	@Override
 	public void draw(Graphics2D g, Game game) {
-		g.drawPolygon(size.polygon); //Draw the Asteroid.
+		g.drawLine(-10, -8, 10, 0);
+                g.drawLine(-10, 8, 10, 0);
+                g.drawLine(-6, -6, -6, 6); //Draw the PoewerUp.
 	}
         @Override
 	public void handleCollision(Game game, Entity other) {
